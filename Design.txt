@@ -1,0 +1,33 @@
+System Architecture and Design
+My project is structured around three main classes: Radio, Station, and Song.
+The Radio class acts as the controller of the application. It manages the
+  graphical user interface (GUI) built with Tkinter, handles user interactions
+  such as moving the year slider or changing modes, and coordinates audio
+  playback using pygame.mixer.music. It maintains a dictionary of Station
+  objects, keyed by (mode, year), to track the state and playback position
+  of each station.
+The Station class represents an individual radio station for a specific
+  year and mode (FM or AM). Each Station contains a list of Song objects,
+  tracks the currently playing song, and records its current playback
+  position. This allows the radio to resume a song from where it was left
+  off, even if the user switches to a different station.
+The Song class stores information about individual audio files, including
+  the file path, song title (cleaned for display), and length. It provides
+  an interface for retrieving the song metadata without directly handling
+  playback.
+OOP principles guided the design. Each class has a single responsibility:
+  Radio manages the interface and overall behavior, Station manages
+  station-level state, and Song encapsulates individual track information.
+  Encapsulation ensures that the internal state of stations and songs is
+  not directly manipulated outside their class interfaces, improving
+  maintainability and reducing bugs.
+Design decisions focused on modularity and flexibility. The separation of
+  Radio, Station, and Song allows for easy addition of features, such as
+  voice lines or expanded metadata. The dictionary structure for stations
+  enables efficient lookup and state tracking for hundreds of songs across
+  multiple years.
+The system follows a simplified Model-View-Controller (MVC) approach.
+  Radio acts as the controller and view, managing both the GUI and the
+  audio logic. Station and Song act as the model, holding the data for
+  playback state and metadata. This separation ensures that the logic for
+  selecting and tracking songs is decoupled from the user interface.
