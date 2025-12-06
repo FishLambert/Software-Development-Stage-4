@@ -31,3 +31,8 @@ The system follows a simplified Model-View-Controller (MVC) approach.
   audio logic. Station and Song act as the model, holding the data for
   playback state and metadata. This separation ensures that the logic for
   selecting and tracking songs is decoupled from the user interface.
+I learned a lot about python, including how to read system files and ways
+  to play audio. The biggest challenge in this project was making the system
+  function like a real radio, where all of the stations play continuously
+  whether or not you're tuned to it. The playback stability could still use
+  some improvements.
